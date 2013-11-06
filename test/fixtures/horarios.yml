@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  personal: MyString
+  curso: MyString
+  h_entrada: 2013-11-06
+  h_salida: MyString
+
+two:
+  personal: MyString
+  curso: MyString
+  h_entrada: 2013-11-06
+  h_salida: MyString

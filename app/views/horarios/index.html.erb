@@ -1,0 +1,33 @@
+<h1>Listing horarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Personal</th>
+      <th>Curso</th>
+      <th>H entrada</th>
+      <th>H salida</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @horarios.each do |horario| %>
+      <tr>
+        <td><%= horario.personal %></td>
+        <td><%= horario.curso %></td>
+        <td><%= horario.h_entrada %></td>
+        <td><%= horario.h_salida %></td>
+        <td><%= link_to 'Show', horario %></td>
+        <td><%= link_to 'Edit', edit_horario_path(horario) %></td>
+        <td><%= link_to 'Destroy', horario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Horario', new_horario_path %>
