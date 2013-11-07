@@ -1987,3 +1987,882 @@ Processing by StaticController#index as HTML
   Rendered layouts/_header.html.erb (0.1ms)
   Rendered layouts/_izquierda.html.erb (0.7ms)
 Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-06 17:14:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_izquierda.html.erb (1.9ms)
+Completed 200 OK in 333ms (Views: 282.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:14:49 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:14:49 -0500
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:14:49 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:14:49 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:14:49 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:14:49 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:14:49 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-06 17:15:12 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_izquierda.html.erb (0.4ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:15:12 -0500
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:15:12 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:15:12 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:15:12 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:15:12 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:15:12 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:15:12 -0500
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-06 17:15:16 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (81.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 154ms (Views: 89.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2013-11-06 17:15:27 -0500
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.erb (1.9ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_izquierda.html.erb (0.8ms)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2013-11-06 17:15:40 -0500
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5Kcqx2xvAsX2CozqFeb4fho5T38nKgwAQmfDOXJTV8=", "user"=>{"email"=>"luigi.guerreros@gmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'luigi.guerreros@gmail.com' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."reset_password_token" = 'stykAN4XJktMqtjpLJYy' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mUPDATE "users" SET "reset_password_token" = ?, "reset_password_sent_at" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["reset_password_token", "stykAN4XJktMqtjpLJYy"], ["reset_password_sent_at", Wed, 06 Nov 2013 22:15:40 UTC +00:00], ["updated_at", Wed, 06 Nov 2013 22:15:40 UTC +00:00]]
+  [1m[35m (175.3ms)[0m  commit transaction
+  Rendered devise/mailer/reset_password_instructions.html.erb (13.8ms)
+Completed 500 Internal Server Error in 1156ms
+
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    2: 
+    3: <p>Someone has requested a link to change your password. You can do this through the link below.</p>
+    4: 
+    5: <p><%= link_to 'Change my password', edit_password_url(@resource, :reset_password_token => @resource.reset_password_token) %></p>
+    6: 
+    7: <p>If you didn't request this, please ignore this email.</p>
+    8: <p>Your password won't change until you access the link above and create a new one.</p>
+  app/views/devise/mailer/reset_password_instructions.html.erb:5:in `_app_views_devise_mailer_reset_password_instructions_html_erb___534879635_86738340'
+
+
+  Rendered /home/guerreros/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/guerreros/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/guerreros/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.5ms)
+
+
+Started GET "/static/index" for 127.0.0.1 at 2013-11-06 17:15:58 -0500
+Processing by StaticController#index as HTML
+  Rendered static/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.5ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static/index" for 127.0.0.1 at 2013-11-06 17:16:45 -0500
+Processing by StaticController#index as HTML
+  Rendered static/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (1.0ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:16:45 -0500
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:16:45 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:16:45 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:16:45 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:16:45 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:16:45 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:16:45 -0500
+
+
+Started GET "/horarios/new" for 127.0.0.1 at 2013-11-06 17:16:48 -0500
+Processing by HorariosController#new as HTML
+  Rendered horarios/_form.html.erb (67.2ms)
+  Rendered horarios/new.html.erb within layouts/application (68.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.9ms)
+Completed 200 OK in 81ms (Views: 77.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/personals/new" for 127.0.0.1 at 2013-11-06 17:16:49 -0500
+Processing by PersonalsController#new as HTML
+  Rendered personals/_form.html.erb (29.1ms)
+  Rendered personals/new.html.erb within layouts/application (30.9ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 38.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/static/index" for 127.0.0.1 at 2013-11-06 17:16:50 -0500
+Processing by StaticController#index as HTML
+  Rendered static/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.7ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static/index" for 127.0.0.1 at 2013-11-06 17:17:01 -0500
+Processing by StaticController#index as HTML
+  Rendered static/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/personals/new" for 127.0.0.1 at 2013-11-06 17:17:02 -0500
+Processing by PersonalsController#new as HTML
+  Rendered personals/_form.html.erb (3.9ms)
+  Rendered personals/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/horarios/new" for 127.0.0.1 at 2013-11-06 17:17:03 -0500
+Processing by HorariosController#new as HTML
+  Rendered horarios/_form.html.erb (6.5ms)
+  Rendered horarios/new.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/personals/new" for 127.0.0.1 at 2013-11-06 17:17:04 -0500
+Processing by PersonalsController#new as HTML
+  Rendered personals/_form.html.erb (4.4ms)
+  Rendered personals/new.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static/index" for 127.0.0.1 at 2013-11-06 17:17:05 -0500
+Processing by StaticController#index as HTML
+  Rendered static/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.5ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/personals/new" for 127.0.0.1 at 2013-11-06 17:17:14 -0500
+Processing by PersonalsController#new as HTML
+  Rendered personals/_form.html.erb (3.8ms)
+  Rendered personals/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/personals" for 127.0.0.1 at 2013-11-06 17:17:32 -0500
+Processing by PersonalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5Kcqx2xvAsX2CozqFeb4fho5T38nKgwAQmfDOXJTV8=", "personal"=>{"nombre"=>"abner", "apellidos"=>"asasasasasa", "cargo"=>"asas", "categoria"=>"asasas"}, "commit"=>"Create Personal"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "personals" ("apellidos", "cargo", "categoria", "created_at", "nombre", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["apellidos", "asasasasasa"], ["cargo", "asas"], ["categoria", "asasas"], ["created_at", Wed, 06 Nov 2013 22:17:32 UTC +00:00], ["nombre", "abner"], ["updated_at", Wed, 06 Nov 2013 22:17:32 UTC +00:00]]
+  [1m[36m (257.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/personals/2
+Completed 302 Found in 265ms (ActiveRecord: 258.2ms)
+
+
+Started GET "/personals/2" for 127.0.0.1 at 2013-11-06 17:17:32 -0500
+Processing by PersonalsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPersonal Load (0.3ms)[0m  SELECT "personals".* FROM "personals" WHERE "personals"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered personals/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.4ms)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:17:32 -0500
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:17:32 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:17:32 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:17:32 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:17:32 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:17:32 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:17:32 -0500
+
+
+Started GET "/personals" for 127.0.0.1 at 2013-11-06 17:17:36 -0500
+Processing by PersonalsController#index as HTML
+  [1m[36mPersonal Load (0.2ms)[0m  [1mSELECT "personals".* FROM "personals"[0m
+  Rendered personals/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.4ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/personals/2" for 127.0.0.1 at 2013-11-06 17:17:41 -0500
+Processing by PersonalsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPersonal Load (0.2ms)[0m  SELECT "personals".* FROM "personals" WHERE "personals"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered personals/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/personals" for 127.0.0.1 at 2013-11-06 17:17:43 -0500
+Processing by PersonalsController#index as HTML
+  [1m[36mPersonal Load (0.3ms)[0m  [1mSELECT "personals".* FROM "personals"[0m
+  Rendered personals/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.2ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/personals/2/edit" for 127.0.0.1 at 2013-11-06 17:17:44 -0500
+Processing by PersonalsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPersonal Load (0.1ms)[0m  SELECT "personals".* FROM "personals" WHERE "personals"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered personals/_form.html.erb (55.7ms)
+  Rendered personals/edit.html.erb within layouts/application (57.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 65ms (Views: 63.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/personals" for 127.0.0.1 at 2013-11-06 17:17:45 -0500
+Processing by PersonalsController#index as HTML
+  [1m[36mPersonal Load (0.2ms)[0m  [1mSELECT "personals".* FROM "personals"[0m
+  Rendered personals/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/personals/2" for 127.0.0.1 at 2013-11-06 17:17:49 -0500
+Processing by PersonalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u5Kcqx2xvAsX2CozqFeb4fho5T38nKgwAQmfDOXJTV8=", "id"=>"2"}
+  [1m[35mPersonal Load (0.4ms)[0m  SELECT "personals".* FROM "personals" WHERE "personals"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "personals" WHERE "personals"."id" = ?  [["id", 2]]
+  [1m[36m (335.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/personals
+Completed 302 Found in 342ms (ActiveRecord: 336.4ms)
+
+
+Started GET "/personals" for 127.0.0.1 at 2013-11-06 17:17:49 -0500
+Processing by PersonalsController#index as HTML
+  [1m[35mPersonal Load (0.2ms)[0m  SELECT "personals".* FROM "personals"
+  Rendered personals/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:17:49 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:17:49 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:17:49 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:17:49 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:17:49 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:17:49 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:17:49 -0500
+
+
+Started GET "/static/index" for 127.0.0.1 at 2013-11-06 17:20:06 -0500
+Processing by StaticController#index as HTML
+  Rendered static/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static/index" for 127.0.0.1 at 2013-11-06 17:21:24 -0500
+Processing by StaticController#index as HTML
+  Rendered static/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static/index" for 127.0.0.1 at 2013-11-06 17:21:45 -0500
+Processing by StaticController#index as HTML
+  Rendered static/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-06 17:22:00 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:22:00 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:22:00 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:22:00 -0500
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:22:00 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:22:00 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:22:00 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:22:00 -0500
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-11-06 17:29:48 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.6ms)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:29:48 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:29:48 -0500
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:29:48 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:29:48 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:29:48 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:29:48 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:29:48 -0500
+
+
+Started POST "/users" for 127.0.0.1 at 2013-11-06 17:30:02 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5Kcqx2xvAsX2CozqFeb4fho5T38nKgwAQmfDOXJTV8=", "user"=>{"email"=>"lu_guerreros@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'lu_guerreros@hotmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Wed, 06 Nov 2013 22:30:02 UTC +00:00], ["email", "lu_guerreros@hotmail.com"], ["encrypted_password", "$2a$10$gL5oQOMbPWSp2w.Fu8pGZeo6.RnwhOqimaM9b8CwIuFwKuNNfEqg6"], ["updated_at", Wed, 06 Nov 2013 22:30:02 UTC +00:00]]
+  [1m[35m (148.1ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `last_sign_in_ip`
+Binary data inserted for `string` type on column `current_sign_in_ip`
+  [1m[35mSQL (1.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["last_sign_in_at", Wed, 06 Nov 2013 22:30:02 UTC +00:00], ["current_sign_in_at", Wed, 06 Nov 2013 22:30:02 UTC +00:00], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", Wed, 06 Nov 2013 22:30:02 UTC +00:00]]
+  [1m[36m (157.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 558ms (ActiveRecord: 307.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-06 17:30:02 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.2ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:30:03 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:30:03 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:30:03 -0500
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:30:03 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:30:03 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:30:03 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:30:03 -0500
+
+
+Started GET "/personals/new" for 127.0.0.1 at 2013-11-06 17:30:33 -0500
+Processing by PersonalsController#new as HTML
+  Rendered personals/_form.html.erb (10.7ms)
+  Rendered personals/new.html.erb within layouts/application (54.6ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.2ms)
+Completed 200 OK in 66ms (Views: 64.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/personals" for 127.0.0.1 at 2013-11-06 17:31:04 -0500
+Processing by PersonalsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5Kcqx2xvAsX2CozqFeb4fho5T38nKgwAQmfDOXJTV8=", "personal"=>{"nombre"=>"Jerson", "apellidos"=>"salguero pizarro", "cargo"=>"docente", "categoria"=>"principal"}, "commit"=>"Create Personal"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "personals" ("apellidos", "cargo", "categoria", "created_at", "nombre", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["apellidos", "salguero pizarro"], ["cargo", "docente"], ["categoria", "principal"], ["created_at", Wed, 06 Nov 2013 22:31:04 UTC +00:00], ["nombre", "Jerson"], ["updated_at", Wed, 06 Nov 2013 22:31:04 UTC +00:00]]
+  [1m[36m (336.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/personals/3
+Completed 302 Found in 342ms (ActiveRecord: 337.0ms)
+
+
+Started GET "/personals/3" for 127.0.0.1 at 2013-11-06 17:31:04 -0500
+Processing by PersonalsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPersonal Load (0.1ms)[0m  SELECT "personals".* FROM "personals" WHERE "personals"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered personals/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.2ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:31:04 -0500
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:31:05 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:31:05 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:31:05 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:31:05 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:31:05 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:31:05 -0500
+
+
+Started GET "/personals" for 127.0.0.1 at 2013-11-06 17:31:22 -0500
+Processing by PersonalsController#index as HTML
+  [1m[36mPersonal Load (0.2ms)[0m  [1mSELECT "personals".* FROM "personals"[0m
+  Rendered personals/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.4ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/personals/3/edit" for 127.0.0.1 at 2013-11-06 17:31:39 -0500
+Processing by PersonalsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPersonal Load (0.4ms)[0m  SELECT "personals".* FROM "personals" WHERE "personals"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered personals/_form.html.erb (3.8ms)
+  Rendered personals/edit.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 13.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/personals" for 127.0.0.1 at 2013-11-06 17:31:42 -0500
+Processing by PersonalsController#index as HTML
+  [1m[36mPersonal Load (0.5ms)[0m  [1mSELECT "personals".* FROM "personals"[0m
+  Rendered personals/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/personals/3" for 127.0.0.1 at 2013-11-06 17:31:44 -0500
+Processing by PersonalsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPersonal Load (0.1ms)[0m  SELECT "personals".* FROM "personals" WHERE "personals"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered personals/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.2ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/personals" for 127.0.0.1 at 2013-11-06 17:31:46 -0500
+Processing by PersonalsController#index as HTML
+  [1m[36mPersonal Load (0.2ms)[0m  [1mSELECT "personals".* FROM "personals"[0m
+  Rendered personals/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.2ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/personals/1" for 127.0.0.1 at 2013-11-06 17:31:51 -0500
+Processing by PersonalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u5Kcqx2xvAsX2CozqFeb4fho5T38nKgwAQmfDOXJTV8=", "id"=>"1"}
+  [1m[35mPersonal Load (0.2ms)[0m  SELECT "personals".* FROM "personals" WHERE "personals"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "personals" WHERE "personals"."id" = ?  [["id", 1]]
+  [1m[36m (206.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/personals
+Completed 302 Found in 211ms (ActiveRecord: 206.9ms)
+
+
+Started GET "/personals" for 127.0.0.1 at 2013-11-06 17:31:51 -0500
+Processing by PersonalsController#index as HTML
+  [1m[35mPersonal Load (0.2ms)[0m  SELECT "personals".* FROM "personals"
+  Rendered personals/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.2ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:31:51 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:31:51 -0500
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:31:51 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:31:51 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:31:51 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:31:51 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:31:51 -0500
+
+
+Started GET "/horarios/new" for 127.0.0.1 at 2013-11-06 17:32:05 -0500
+Processing by HorariosController#new as HTML
+  Rendered horarios/_form.html.erb (6.4ms)
+  Rendered horarios/new.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.2ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/areas" for 127.0.0.1 at 2013-11-06 17:34:45 -0500
+Processing by AreasController#index as HTML
+  [1m[36mArea Load (0.2ms)[0m  [1mSELECT "areas".* FROM "areas"[0m
+  Rendered areas/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:34:45 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:34:45 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:34:45 -0500
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:34:45 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:34:45 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:34:45 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:34:45 -0500
+
+
+Started GET "/areas/new" for 127.0.0.1 at 2013-11-06 17:34:48 -0500
+Processing by AreasController#new as HTML
+  Rendered areas/_form.html.erb (28.2ms)
+  Rendered areas/new.html.erb within layouts/application (31.7ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/areas" for 127.0.0.1 at 2013-11-06 17:35:32 -0500
+Processing by AreasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5Kcqx2xvAsX2CozqFeb4fho5T38nKgwAQmfDOXJTV8=", "area"=>{"nombre"=>"Sistemas", "encargado"=>"director", "telefono"=>"989108638"}, "commit"=>"Create Area"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "areas" ("created_at", "encargado", "nombre", "telefono", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Wed, 06 Nov 2013 22:35:32 UTC +00:00], ["encargado", "director"], ["nombre", "Sistemas"], ["telefono", 989108638], ["updated_at", Wed, 06 Nov 2013 22:35:32 UTC +00:00]]
+  [1m[35m (270.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/areas/1
+Completed 302 Found in 279ms (ActiveRecord: 271.1ms)
+
+
+Started GET "/areas/1" for 127.0.0.1 at 2013-11-06 17:35:32 -0500
+Processing by AreasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArea Load (0.6ms)[0m  [1mSELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered areas/show.html.erb within layouts/application (37.1ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 50ms (Views: 44.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:35:32 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:35:32 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:35:32 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:35:32 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:35:32 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:35:32 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:35:32 -0500
+
+
+Started GET "/areas" for 127.0.0.1 at 2013-11-06 17:35:34 -0500
+Processing by AreasController#index as HTML
+  [1m[35mArea Load (0.5ms)[0m  SELECT "areas".* FROM "areas"
+  Rendered areas/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/areas/new" for 127.0.0.1 at 2013-11-06 17:35:36 -0500
+Processing by AreasController#new as HTML
+  Rendered areas/_form.html.erb (3.8ms)
+  Rendered areas/new.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.2ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/areas" for 127.0.0.1 at 2013-11-06 17:35:49 -0500
+Processing by AreasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u5Kcqx2xvAsX2CozqFeb4fho5T38nKgwAQmfDOXJTV8=", "area"=>{"nombre"=>"administracion", "encargado"=>"secretaria", "telefono"=>"987654231"}, "commit"=>"Create Area"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "areas" ("created_at", "encargado", "nombre", "telefono", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 06 Nov 2013 22:35:49 UTC +00:00], ["encargado", "secretaria"], ["nombre", "administracion"], ["telefono", 987654231], ["updated_at", Wed, 06 Nov 2013 22:35:49 UTC +00:00]]
+  [1m[36m (236.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/areas/2
+Completed 302 Found in 241ms (ActiveRecord: 236.6ms)
+
+
+Started GET "/areas/2" for 127.0.0.1 at 2013-11-06 17:35:49 -0500
+Processing by AreasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mArea Load (0.3ms)[0m  SELECT "areas".* FROM "areas" WHERE "areas"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered areas/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.4ms)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:35:49 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:35:49 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:35:49 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:35:49 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:35:49 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:35:49 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:35:49 -0500
+
+
+Started GET "/areas" for 127.0.0.1 at 2013-11-06 17:35:53 -0500
+Processing by AreasController#index as HTML
+  [1m[36mArea Load (0.2ms)[0m  [1mSELECT "areas".* FROM "areas"[0m
+  Rendered areas/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.6ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/static/index" for 127.0.0.1 at 2013-11-06 17:36:09 -0500
+Processing by StaticController#index as HTML
+  Rendered static/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/personals/new" for 127.0.0.1 at 2013-11-06 17:36:11 -0500
+Processing by PersonalsController#new as HTML
+  Rendered personals/_form.html.erb (4.4ms)
+  Rendered personals/new.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-06 17:36:17 -0500
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-06 17:36:17 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:36:18 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:36:18 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:36:18 -0500
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:36:18 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:36:18 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:36:18 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:36:18 -0500
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2013-11-06 17:36:21 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u5Kcqx2xvAsX2CozqFeb4fho5T38nKgwAQmfDOXJTV8="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-06 17:36:21 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_izquierda.html.erb (0.2ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-06 17:36:21 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-06 17:36:21 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-06 17:36:21 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-06 17:36:21 -0500
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-06 17:36:21 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-06 17:36:21 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-06 17:36:21 -0500
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-06 17:36:24 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_izquierda.html.erb (0.3ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.0ms)
