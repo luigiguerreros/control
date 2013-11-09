@@ -2964,3 +2964,33 @@ Processing by HorariosController#new as HTML
   Rendered layouts/_header.html.erb (0.0ms)
   Rendered layouts/_izquierda.html.erb (0.2ms)
 Completed 200 OK in 165ms (Views: 155.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-09 02:04:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_izquierda.html.erb (0.7ms)
+Completed 200 OK in 104ms (Views: 81.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-11-09 02:04:57 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-09 02:04:57 -0500
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-11-09 02:04:57 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-09 02:04:57 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-09 02:04:57 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-09 02:04:57 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-09 02:04:57 -0500
