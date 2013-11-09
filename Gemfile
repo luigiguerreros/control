@@ -8,7 +8,7 @@ group :production, :staging do
 end
 
 group :development, :test do
-  gem "sqlite3-ruby", :require => "sqlite3"
+  gem "sqlite3"
 end
 
 # Use sqlite3 as the database for Active Record
